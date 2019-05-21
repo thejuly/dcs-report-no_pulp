@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 from flask import Flask, request, abort
 
+'''
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -23,7 +24,7 @@ from linebot import LineBotApi
 from linebot.exceptions import LineBotApiError
 # end import module
 
-
+'''
 
 
 
