@@ -43,14 +43,14 @@ cell = sheet.cell(2,2).value  # Get the value of a specific cell
 
 
 
-
+'''
 try:
     conn = psycopg2.connect("dbname='d6nfkhldr8m73b' user='dxebvbtkaavoqw' host='ec2-54-235-114-242.compute-1.amazonaws.com' password='850c57e80ca8ddc9bd59b42511534ca024b3b02e98b85646746e937551fefeb8'")
     cur = conn.cursor()
 
 except:
     print 'cannot connect'
-    
+'''
 
 
 
@@ -92,6 +92,9 @@ def temp():
 
 @app.route('/serv')
 def serv():
+    testx = sheet.cell(2,2).value  # Get the value of a specific cell
+    return testx
+    '''
     try:
         cur.execute("""SELECT * from t_report""")
     except:
@@ -104,7 +107,7 @@ def serv():
     #return 'Hello World!'
     return testx
     #return '',200
-
+    '''
 # end test route
 
 
