@@ -3,7 +3,7 @@ import os
 from flask import Flask, request
 import json
 import requests
-import psycopg2
+#import psycopg2
 
 import re
 import random
@@ -25,7 +25,20 @@ from linebot.exceptions import LineBotApiError
 
 
 
+####google sheet####
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from pprint import pprint
 
+
+global cell
+
+scope = ['https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+client = gspread.authorize(creds)
+sheet = client.open("dcs-report").sheet1  # Open the spreadhseet
+cell = sheet.cell(2,2).value  # Get the value of a specific cell
+####google sheet####
 
 
 
@@ -55,7 +68,8 @@ handler = WebhookHandler('f1e03e9bb185204d4494a1cce993970a') # Channel Secret Re
 # for test route
 @app.route('/')
 def hello():
-    return 'Hello World! thongpoon Sarsaiy'
+    #return 'Hello World! thongpoon Sarsaiy'
+    return cell
 
 @app.route('/tuna')
 def tuna():
