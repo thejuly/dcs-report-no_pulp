@@ -92,7 +92,7 @@ def temp():
 
 @app.route('/serv')
 def serv():
-    testx = sheet.cell(2,2).value  # Get the value of a specific cell
+    testx = sheet.cell(2,1).value  # Get the value of a specific cell
     return testx
     '''
     try:
@@ -148,7 +148,14 @@ def handle_message(event):
     print("event.message.text:", event.message.text)
 
     ########################################## Dcs report User ask ################################################
+    #paper
     if event.message.text == "Serv":
+        msg = 'No Data'
+        msg = sheet.cell(2,1).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+
+        '''
         msg = 'No Data'
         try:
             cur.execute("""SELECT * from t_report""")
@@ -161,8 +168,14 @@ def handle_message(event):
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
-
+        '''
+    #paper   
     if event.message.text == "Temp":
+        msg = 'No Data'
+        msg = sheet.cell(2,2).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
         msg = 'No Data'
         try:
             cur.execute("""SELECT * from t_report""")
@@ -175,8 +188,14 @@ def handle_message(event):
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
-
+        '''
+    #paper
     if event.message.text == "Rect":
+        msg = 'No Data'
+        msg = sheet.cell(2,3).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
         msg = 'No Data'
         try:
             cur.execute("""SELECT * from t_report""")
@@ -189,8 +208,14 @@ def handle_message(event):
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
-
+        '''
+    #paper
     if event.message.text == "Netw":
+        msg = 'No Data'
+        msg = sheet.cell(2,4).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
         msg = 'No Data'
         try:
             cur.execute("""SELECT * from t_report""")
@@ -203,8 +228,14 @@ def handle_message(event):
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
-
+        '''
+    #paper
     if event.message.text == "Cont":
+        msg = 'No Data'
+        msg = sheet.cell(2,5).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
         msg = 'No Data'
         try:
             cur.execute("""SELECT * from t_report""")
@@ -217,36 +248,14 @@ def handle_message(event):
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
-
-    if event.message.text == "Net":
-        msg = 'No Data'
-        try:
-            cur.execute("""SELECT * from t_report""")
-        except:
-            print 'cannot select'
-
-        rows = cur.fetchall()
-        for row in rows:
-            msg = row[6]
-
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
-        return 0
-
-    if event.message.text == "Con":
-        msg = 'No Data'
-        try:
-            cur.execute("""SELECT * from t_report""")
-        except:
-            print 'cannot select'
-
-        rows = cur.fetchall()
-        for row in rows:
-            msg = row[7]
-
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
-        return 0
-
+        '''
+    #paper
     if event.message.text == "Report":
+        msg = 'No Data'
+        msg = sheet.cell(2,6).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
         msg = 'No Data'
         try:
             cur.execute("""SELECT * from t_report""")
@@ -259,22 +268,15 @@ def handle_message(event):
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
-
-    if event.message.text == "Rpt":
+        '''
+################################################## pulp ###################################
+    #pulp
+    if event.message.text == "Tmp":
         msg = 'No Data'
-        try:
-            cur.execute("""SELECT * from t_report""")
-        except:
-            print 'cannot select'
-
-        rows = cur.fetchall()
-        for row in rows:
-            msg = row[9]
-
+        msg = sheet.cell(2,7).value  # Get the value of a specific cell
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
-
-    if event.message.text == "Tmp":
+        '''
         msg = 'No Data'
         try:
             cur.execute("""SELECT * from t_report""")
@@ -287,8 +289,14 @@ def handle_message(event):
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
-
+        '''
+    #pulp
     if event.message.text == "Rct":
+        msg = 'No Data'
+        msg = sheet.cell(2,8).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
         msg = 'No Data'
         try:
             cur.execute("""SELECT * from t_report""")
@@ -301,6 +309,67 @@ def handle_message(event):
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
+        '''        
+    #pulp
+    if event.message.text == "Net":
+        msg = 'No Data'
+        msg = sheet.cell(2,9).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
+        msg = 'No Data'
+        try:
+            cur.execute("""SELECT * from t_report""")
+        except:
+            print 'cannot select'
+
+        rows = cur.fetchall()
+        for row in rows:
+            msg = row[6]
+
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
+    #pulp
+    if event.message.text == "Con":
+        msg = 'No Data'
+        msg = sheet.cell(2,10).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
+        msg = 'No Data'
+        try:
+            cur.execute("""SELECT * from t_report""")
+        except:
+            print 'cannot select'
+
+        rows = cur.fetchall()
+        for row in rows:
+            msg = row[7]
+
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
+    #pulp     
+    if event.message.text == "Rpt":
+        msg = 'No Data'
+        msg = sheet.cell(2,11).value  # Get the value of a specific cell
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
+        msg = 'No Data'
+        try:
+            cur.execute("""SELECT * from t_report""")
+        except:
+            print 'cannot select'
+
+        rows = cur.fetchall()
+        for row in rows:
+            msg = row[9]
+
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        return 0
+        '''
     ########################################## Dcs report User ask ################################################
     
     
