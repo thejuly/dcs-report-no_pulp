@@ -273,7 +273,7 @@ def handle_message(event):
     #pulp
     if event.message.text == "Tmp":
         msg = 'No Data'
-        msg = sheet.cell(2,7).value  # Get the value of a specific cell
+        #msg = sheet.cell(2,7).value  # Get the value of a specific cell
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
         '''
@@ -293,7 +293,7 @@ def handle_message(event):
     #pulp
     if event.message.text == "Rct":
         msg = 'No Data'
-        msg = sheet.cell(2,8).value  # Get the value of a specific cell
+        #msg = sheet.cell(2,8).value  # Get the value of a specific cell
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
         '''
@@ -313,7 +313,7 @@ def handle_message(event):
     #pulp
     if event.message.text == "Net":
         msg = 'No Data'
-        msg = sheet.cell(2,9).value  # Get the value of a specific cell
+        #msg = sheet.cell(2,9).value  # Get the value of a specific cell
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
         '''
@@ -333,7 +333,7 @@ def handle_message(event):
     #pulp
     if event.message.text == "Con":
         msg = 'No Data'
-        msg = sheet.cell(2,10).value  # Get the value of a specific cell
+        #msg = sheet.cell(2,10).value  # Get the value of a specific cell
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
         '''
@@ -353,7 +353,7 @@ def handle_message(event):
     #pulp     
     if event.message.text == "Rpt":
         msg = 'No Data'
-        msg = sheet.cell(2,11).value  # Get the value of a specific cell
+        #msg = sheet.cell(2,11).value  # Get the value of a specific cell
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
         '''
