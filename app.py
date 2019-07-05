@@ -147,6 +147,20 @@ def handle_message(event):
     print("event.reply_token:", event.reply_token)
     print("event.message.text:", event.message.text)
 
+    
+    ########################################## google sheet ################################################
+    #paper
+    if '@me@' in event.message.text:
+        #msg = 'No Data'
+        #msg = sheet.cell(2,2).value  # Get the value of a specific cell
+        #line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        #return 0
+        
+        
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
+        return 0
+
+        
     ########################################## Dcs report User ask ################################################
     #paper
     if event.message.text == "Serv":
