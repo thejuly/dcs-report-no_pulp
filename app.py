@@ -156,7 +156,8 @@ def handle_message(event):
         #line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         #return 0
         
-        msg = event.message.text[-3:]
+        #msg = event.message.text[-3:]
+        msg = event.message.text.strip('@me@')
         #sheet.update_cell(2,13, "CHANGEDx")  # Update one cell
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
