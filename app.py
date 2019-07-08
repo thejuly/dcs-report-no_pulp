@@ -160,6 +160,21 @@ def handle_message(event):
         msg = event.message.text.strip('@me@')
         sheet.update_cell(2,13, msg)  # Update one cell
         
+        ### json ###
+        json_line = request.get_json()
+        json_line = json.dumps(json_line)
+        decoded = json.loads(json_line)
+        
+        #user = user who send message to me
+        #messageGet = message that user send to me
+        #typeGet = type of data that user send to me
+        user = decoded["events"][0]['replyToken']
+        messageGet = decoded["events"][0]['message']['text']
+        typeGet = decoded["events"][0]['message']['type']
+        
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=user))
+        ### json ###
+        
         #line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
         return 0
 
